@@ -1,0 +1,90 @@
+h1{
+    text-align: center;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.mensaje{
+    text-align: center;
+}
+
+.resultados{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+header{
+    background-color: maroon;
+    color: white;
+    margin: 0px;
+    padding: 20px;
+}
+
+body{
+    margin: 0px;
+    min-height: 100%;
+}
+
+.toolbar{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.toolbar a {
+  display: inline-block; /* Allows vertical padding and margin */
+  text-decoration: none; /* Removes the default blue underline */
+  color: #333;           /* Dark text color */
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+/* Hover effect for the links */
+.toolbar a:hover {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+.planilla {
+    padding: 25px;
+    overflow: auto;
+}
+
+.tabla-excel {
+    border-collapse: collapse;
+    min-width: 1500px;
+    width: 100%;
+}
+
+.tabla-excel td {
+    width: 100px;
+    height: 34px;
+    border: 1px solid #999;
+    padding: 0;
+}
+
+.tabla-excel input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    border: 0;
+    padding: 6px;
+    font: inherit;
+}
+
+.tabla-excel input:focus {
+    outline: 2px solid #1976d2;
+}
