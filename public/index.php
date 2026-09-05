@@ -6,8 +6,8 @@
     <title>Gestor Financiero</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<script>
-function calcularSaldo() {
+<script> //javascript usado para calcular el saldo directamente cuando digitado.//
+function calcularSaldo() { 
   const entradaInput = document.querySelector('input[name="entrada[]"]');
   const salidaInput = document.querySelector('input[name="salida[]"]');
   const saldoInput = document.querySelector('input[name="saldo[]"]');
@@ -18,8 +18,9 @@ function calcularSaldo() {
   saldoInput.value = entrada - salida;
 }
 </script>
-<body>
-   <header>
+<body>  
+  <!-- encabezado con titulo y los botones del menu para cambiar entre paginas-->
+   <header> 
     <h1>Gestion Financiera</h1>
 
     <nav class="toolbar">
@@ -30,6 +31,7 @@ function calcularSaldo() {
     </nav>
    </header>
 <form method="POST">
+  <!--formulario con tablas estilo excel para cargar el dia y mes de la operacion utilizando post para el php-->
    <table border="5">
     <thead>
       <tr>
@@ -93,6 +95,7 @@ function calcularSaldo() {
   <option value="30">30</option>
   <option value="31">31</option>
 </select>
+<!--campos donde el usuario ingresa sus datos de entrada y salida-->
           </td>
           <td><input type="text" name="entrada[]" placeholder="Entrada" oninput="calcularSaldo()"></td>
           <td><input type="text" name="salida[]" placeholder="Salida"oninput="calcularSaldo()"></td>
@@ -107,13 +110,15 @@ function calcularSaldo() {
   </table>
 
   <button type="submit">Guardar</button>
-
+<!--boton que te lleva a la pagina con los resultados guardados-->
   <a href="result.php"> <button type="button"> Mis Finanzas</button></a>
 </form>
 </body>
 </html>
 
+
 <?php
+//conexion php para la base de datos en xampp sql
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -125,7 +130,7 @@ try {
 } catch (PDOException $e) {
     die("Connection failed: " . $e->getMessage());
 }
-
+//el fetch para cargar en las tablas de la base
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $entrada = $_POST["entrada"] ?? [];
     $salida = $_POST["salida"] ?? [];

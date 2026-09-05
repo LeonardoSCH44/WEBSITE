@@ -1,4 +1,4 @@
-<?php
+<?php //conexion con la base de datos para presentar los resultados//
 $host = "localhost";
 $user = "root";
 $pass = "";
